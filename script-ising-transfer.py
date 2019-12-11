@@ -57,6 +57,7 @@ for iteration in range(5):
     reference_energy = None
     use_dmrg_reference = True
 
+    #### The parameter for the transfer learning method
     # transfer (k,p)-tiling, p is defined automatically
     k_val = 1  # (1,2)-tiling
     #k_val = 2 # (2,2)-tiling

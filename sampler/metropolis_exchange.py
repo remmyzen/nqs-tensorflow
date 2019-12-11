@@ -53,7 +53,7 @@ class MetropolisExchange(Sampler):
     def sample_once(self, machine, starting_sample, num_samples):
         new_config = self.get_new_config(starting_sample, num_samples)
         ratio = tf.abs(tf.exp(machine.log_val_diff(new_config, starting_sample)))
-      	random = tf.distributions.Uniform(0.0, 1.0).sample((num_samples, 1))
+        random = tf.distributions.Uniform(0.0, 1.0).sample((num_samples, 1))
         accept = tf.squeeze(tf.greater(ratio, random))
         sample = tf.where(accept, new_config, starting_sample)
         return sample
